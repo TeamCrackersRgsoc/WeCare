@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <meta charset="utf-8"/>
+      <title>Sign Up</title>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="/css/style.css">
+   </head>
+   <body>
+      <div id="login">
+         <% if (message.length > 0) { %>
+              <div class="alert alert-danger"><%= message %></div>
+         <% } %>
+         <h1><strong>Sign Up Here!</strong></h1>
+         <form action="/signup" method="post">
+            <fieldset>
+               <p><input type="text" name="firstname" required value="Firstname" onBlur="if(this.value=='')this.value='Firstname'" onFocus="if(this.value=='Firstname')this.value='' "></p>
+
+               <p><input type="text" name="lastname" required value="Lastname" onBlur="if(this.value=='')this.value='Lastname'" onFocus="if(this.value=='Lastname')this.value='' "></p>
+
+               <p><input type="text" name="email" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "></p>
+
+               <p><input type="text" name="username" required value="Username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "></p>
+
+               <p><input type="password" name="password" required value="Password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "></p>
+
+               <p><input type="submit" value="Sign Up"></p>
+            </fieldset>
+         </form>
+      </div>
+   </body>
+</html>
