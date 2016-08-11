@@ -7,11 +7,14 @@
    </head>
    <body>
       <div id="login">
+      <%if(message.length>0){%>
+         <div class="alert alert-danger"><%=message%></div>
+      <%}%>
          <h1><strong>Sign in Here!</strong></h1>
-         <form action="javascript:void(0);" method="get">
+         <form action="/login" method="post">
             <fieldset>
-               <p><input type="text" required value="Username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "></p>
-               <p><input type="password" required value="Password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "></p>
+               <p><input type="text" name="email" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "></p>
+               <p><input type="password" name="password" required value="Password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "></p>
                <p><input type="submit" value="Login"></p>
             </fieldset>
          </form>

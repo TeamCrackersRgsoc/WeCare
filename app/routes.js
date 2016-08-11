@@ -10,7 +10,7 @@ module.exports = function (app, passport) {
 	});
 
 	app.get('/login', function (req, res) {
-		res.render('login.ejs');
+		res.render('login.ejs', { message: req.flash('loginMessage') });
 	});
 
 	app.get('/profile', isLoggedIn, function (req, res) {
@@ -22,6 +22,12 @@ module.exports = function (app, passport) {
 		failureRedirect : '/signup',
 		failureFlash : true
 	}));
+
+	app.post('/login',passport.authenticate('local-login',{
+		successRedirect : '/profile',
+		failureRedirect : '/login',
+		failureFlash : true
+	}))
 
 	function isLoggedIn(req, res, next) {
 		if(req.isAuthenticated())
